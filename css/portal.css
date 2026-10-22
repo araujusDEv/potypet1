@@ -72,6 +72,16 @@ body.sidebar-collapsed .sidebar-footer [data-tooltip] { position:relative; }
 .followup-saved { margin-top: 10px; white-space: normal; overflow-wrap: anywhere; }
 .followup-saved summary { cursor: pointer; font-weight: 600; }
 .followup-saved img { max-width: 100%; max-height: 260px; object-fit: contain; }
+/* O responsável deve conseguir ler o relato e chegar ao pedido de ajuda sem
+   uma foto vertical alongar toda a linha de acompanhamentos. */
+.followup-step > img {
+  max-width: 100%;
+  max-height: 260px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.panel-animal-photo { flex: 0 0 48px; }
 .request-policy { font-size: .84rem; margin: 12px 0; color: var(--color-ink-soft); }
 :focus-visible { outline: 3px solid var(--color-primary-dark); outline-offset: 3px; }
 

@@ -6,3 +6,46 @@
 @media(max-width:620px){.fund-payment{padding:16px}.fund-amount-presets{gap:6px}.fund-amount-presets .btn{font-size:.72rem;min-width:44px}}
 .fund-dialog{max-width:94vw}
 @media(max-width:360px){.fund-detail-body{padding:16px 12px}.fund-payment{padding:12px}.fund-amount-presets .btn{padding:9px 6px}}
+
+/* A capa ocupa apenas a área reservada, mesmo com imagens verticais.
+   A imagem fora do fluxo evita que seu tamanho natural amplie a linha do grid. */
+.fund-card-cover {
+  flex: 0 0 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.fund-card-cover > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fund-card-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* O espaço do menu lateral também precisa caber nas larguras intermediárias. */
+.fundraising-page .fund-filters {
+  display: grid;
+  grid-template-columns: minmax(145px, .9fr) minmax(240px, 2fr) minmax(130px, .8fr) minmax(170px, 1fr);
+  gap: 12px;
+}
+.fundraising-page .fund-filters > label,
+.fundraising-page .fund-filters .fund-search {
+  min-width: 0;
+}
+@media (max-width: 1200px) {
+  .fundraising-page .fund-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .fundraising-page .fund-filters {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+}
